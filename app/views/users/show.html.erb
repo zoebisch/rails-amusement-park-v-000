@@ -1,0 +1,7 @@
+<%= admin_check %><br />
+Name: <%= @user.name %> <br />
+Tickets: <%= @user.tickets %> <br />
+Height: <%= @user.height %><br />
+Mood: <%= mood_level %> <br />
+<%= link_to "Log Out", logout_path, method: :delete %><br />
+<%= link_to "See attractions", attractions_path %><br />

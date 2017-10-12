@@ -1,3 +1,7 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 <%= admin_check %><br />
 Name: <%= @user.name %> <br />
 Tickets: <%= @user.tickets %> <br />

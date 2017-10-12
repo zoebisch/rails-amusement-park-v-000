@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  include UsersHelper
   def index
   end
 
@@ -20,6 +20,13 @@ class UsersController < ApplicationController
       redirect_to '/'
     end
 
+  end
+
+  def take_ride
+    user = User.find(session[:user_id])
+    ride = Attraction.find(params[:ride])
+    flash[:alert] = user_check(user,ride)
+    redirect_to users_show_path(user)
   end
 
   private

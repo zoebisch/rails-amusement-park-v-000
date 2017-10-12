@@ -1,4 +1,4 @@
 <% @attractions.each do |attraction| %>
-  <%= link_to "Go on " + attraction.name, attraction_path(attraction) %><br />
-  <% binding.pry %>
+  <%= show_check(attraction) %><br />
 <% end %>
+<%= new_check %><br />

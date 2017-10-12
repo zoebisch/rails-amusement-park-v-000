@@ -1,4 +1,9 @@
-<%= form_tag users_show_path do %>
-  <%= button_tag 'Go on this ride' %>
-  <% binding.pry %>
+<%= edit_check(@attraction) %><br />
+Name: <%= @attraction.name %> <br />
+Tickets: <%= @attraction.tickets %> <br />
+Height: <%= @attraction.min_height %><br />
+Nausea Rating: <%= @attraction.nausea_rating %> <br />
+Happiness Rating: <%= @attraction.min_height %><br />
+<%= form_tag take_ride_path(@user, :ride => params[:id]) do %>
+  <%= submit_tag 'Go on this ride' %>
 <% end %>

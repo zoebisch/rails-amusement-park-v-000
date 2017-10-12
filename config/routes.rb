@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   post '/users' => 'users#create', as: "users"
   get '/users/:id' => 'users#show', as: "users_show"
   post '/users/:id' => 'users#show'
+  post '/users/:id/take_ride' => 'users#take_ride', as: "take_ride"
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create', as: "sessions"
   delete 'logout' => 'sessions#destroy'
-  resources :attractions, :only => [:index, :show]
+  patch '/attractions/:id' => 'attractions#patch'
+  resources :attractions, :only => [:new, :create, :edit, :index, :show]
 end
